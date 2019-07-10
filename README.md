@@ -10,7 +10,7 @@
 
 ## Introduction
 
-React Blog is a........
+React Blog is a blog that is meant to target those who are looking to track what kind of food they are eating and how it is effecting their bodies. Users will get to see
 
 ## Technologies
 
