@@ -36,7 +36,7 @@ export default class Main extends Component {
         async function createPost() {
             try {
                 const sendPost = await fetch(
-                    'http://localhost:8000/api/post',
+                    'http://localhost:3001/api/post',
                     options
                 )
                 const postResult = await sendPost.json()
