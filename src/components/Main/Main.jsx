@@ -11,11 +11,12 @@ export default class Main extends Component {
     }
 
     componentDidMount() {
-        getPosts().then(results =>
-            this.setState({
-                posts: results,
-            })
-        )
+        console.log(this)
+        // getPosts().then(results =>
+        //     this.setState({
+        //         posts: results,
+        //     })
+        // )
     }
 
     handleClick = event => {
@@ -75,7 +76,10 @@ export default class Main extends Component {
 
         return (
             <div>
-                <NavBar />
+                <NavBar
+                    user={this.props.user}
+                    handleLogout={this.props.handleLogout}
+                />
                 <header>
                     <h1>Blog</h1>
                 </header>
@@ -91,15 +95,5 @@ export default class Main extends Component {
                 </section>
             </div>
         )
-    }
-}
-
-async function getPosts() {
-    try {
-        const fetchPosts = await fetch('http://localhost:8000/api/posts')
-        const data = fetchPosts.json()
-        return await data
-    } catch (error) {
-        console.log(error)
     }
 }

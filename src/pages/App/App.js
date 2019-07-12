@@ -7,21 +7,37 @@ import SignupPage from '../SignupPage/SignupPage'
 import ProtectedRoute from '../LoginPage/ProtectedRoute'
 import BlogPost from '../../components/BlogPost/BlogPost'
 import AboutPage from '../AboutPage/AboutPage'
+import userService from '../../utils/userService'
 
 export default class App extends Component {
     state = {
         isLoggedIn: false,
+        user: userService.getUser(),
     }
 
-    handleLogin = () => {
-        this.setState({ isLoggedIn: true })
+    handleLogout = () => {
+        userService.logout()
+        this.setState({ user: null })
+    }
+
+    handleSignupOrLogin = () => {
+        this.setState({ user: userService.getUser() })
     }
 
     render() {
         return (
             <div>
                 <Switch>
-                    <Route exact path="/" render={() => <Main />} />
+                    <Route
+                        exact
+                        path="/"
+                        render={() => (
+                            <Main
+                                handleLogout={this.handleLogout}
+                                user={this.state.user}
+                            />
+                        )}
+                    />
                     <Route exact path="/about" render={() => <AboutPage />} />
                     <Route
                         exact
