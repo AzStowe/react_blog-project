@@ -4,10 +4,11 @@ import Form from '../../components/Form/Form'
 import BlogPost from '../../components/BlogPost/BlogPost'
 import Button from '../../components/Button/Button'
 import NavBar from '../../components/NavBar/NavBar'
+import '../Button/Button.css'
 
 class Main extends React.Component {
     state = {
-        isPosting: true,
+        isPosting: false,
         posts: [],
     }
 
@@ -82,13 +83,14 @@ class Main extends React.Component {
     render() {
         const postsList = this.state.posts.map((post, index) => {
             return (
-                <BlogPost
-                    key={index}
-                    {...post}
-                    handleDeletePost={this.handleDeletePost}
-                    index={index}
-                    postId={post._id}
-                />
+                <div className="b">
+                    <BlogPost
+                        key={index}
+                        {...post}
+                        handleDeletePost={this.handleDeletePost}
+                        postId={post._id}
+                    />
+                </div>
             )
         })
 

@@ -2,15 +2,14 @@ import React from 'react'
 import Button from '../Button/Button'
 import PropTypes from 'prop-types'
 
-function BlogPost({ title, author, post, postId, index, handleDeletePost }) {
+function BlogPost({ title, author, post, postId, handleDeletePost }) {
     return (
-        <div>
-            <h3>{title}</h3>
-            <h5>{author}</h5>
+        <div className="b">
+            <h3>{author}</h3>
+            <h5>{title}</h5>
             <h6>{post}</h6>
             <Button
                 type={'Delete'}
-                index={index}
                 handleDeletePost={handleDeletePost}
                 postId={postId}
             />
@@ -24,7 +23,6 @@ BlogPost.propTypes = {
     title: PropTypes.string,
     author: PropTypes.string,
     post: PropTypes.string,
-    index: PropTypes.number,
     handleDeletePost: PropTypes.func,
     postId: PropTypes.string,
 }
