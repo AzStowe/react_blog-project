@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './LoginPage.css'
 import userService from '../../utils/userService'
-import SignupPage from '../SignupPage/SignupPage'
 
 class LoginPage extends Component {
     state = {

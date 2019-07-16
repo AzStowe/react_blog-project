@@ -25,9 +25,6 @@ export default class Form extends Component {
     }
 
     render() {
-        /** * TODO : form goes here and we need the following inputs
-         * title author and post
-         */
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className="row">
