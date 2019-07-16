@@ -59,12 +59,24 @@ class Main extends React.Component {
         })
     }
 
-    handleDeletePost = postIdx => {
-        const newStateArray = this.state.posts.filter(
-            (elem, idx) => idx !== postIdx
-        )
+    handleDeletePost = async id => {
+        if (this.state.posts.filter(elem => id === elem.id) === []) {
+            throw new Error('Wrong item')
+        }
+        // First we delete the post from the database
+        await deletePost(id)
+            .then(results => console.log(results))
+            .catch(error => console.error(error))
 
-        this.setState({ posts: newStateArray })
+        // Then we get the new, updated list of posts from the database and apply it to state
+
+        await getPosts()
+            .then(results =>
+                this.setState({
+                    posts: results,
+                })
+            )
+            .catch(error => console.error(error))
     }
 
     render() {
@@ -75,6 +87,7 @@ class Main extends React.Component {
                     {...post}
                     handleDeletePost={this.handleDeletePost}
                     index={index}
+                    postId={post._id}
                 />
             )
         })
@@ -112,6 +125,22 @@ async function getPosts() {
         return await data
     } catch (error) {
         console.log(error)
+    }
+}
+
+async function deletePost(id) {
+    const options = {
+        method: 'DELETE',
+    }
+    try {
+        const deletedPost = await fetch(
+            `http://localhost:3001/api/posts/${id}`,
+            options
+        )
+        const response = deletedPost.json()
+        return response
+    } catch (error) {
+        console.error(error)
     }
 }
 

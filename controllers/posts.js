@@ -8,9 +8,12 @@ module.exports = {
 }
 
 function deletePost(req, res) {
-    Post.findByIdAndRemove(req.params.id).then(function(post) {
-        res.status(200).json(post)
-    })
+    console.log('Called delete post in controller')
+    Post.findByIdAndRemove(req.params.id)
+        .then(function(post) {
+            res.status(200).json(post)
+        })
+        .catch(err => console.log(err))
 }
 
 function getOnePost(req, res) {
