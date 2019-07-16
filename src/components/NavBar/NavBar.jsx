@@ -9,6 +9,10 @@ const NavBar = props => {
                 LOG OUT
             </Link>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <Link to="/about" className="NavBar-link">
+                ABOUT
+            </Link>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
             <span className="NavBar-welcome">WELCOME, {props.user.name}</span>
         </div>
     ) : (
@@ -19,10 +23,6 @@ const NavBar = props => {
             &nbsp;&nbsp;|&nbsp;&nbsp;
             <Link to="/signup" className="NavBar-link">
                 SIGN UP
-            </Link>
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-            <Link to="/about" className="NavBar-link">
-                ABOUT
             </Link>
         </div>
     )

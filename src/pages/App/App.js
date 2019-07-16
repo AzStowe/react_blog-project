@@ -4,8 +4,6 @@ import './App.css'
 import Main from '../../components/Main/Main'
 import LoginPage from '../LoginPage/LoginPage'
 import SignupPage from '../SignupPage/SignupPage'
-import ProtectedRoute from '../LoginPage/ProtectedRoute'
-import BlogPost from '../../components/BlogPost/BlogPost'
 import AboutPage from '../AboutPage/AboutPage'
 import userService from '../../utils/userService'
 
