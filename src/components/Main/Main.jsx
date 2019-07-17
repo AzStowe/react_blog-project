@@ -102,7 +102,7 @@ class Main extends React.Component {
                 />
 
                 <header>
-                    <h1>Blog</h1>
+                    <h1>The Blog</h1>
                 </header>
                 <section>
                     <Button

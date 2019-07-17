@@ -1,5 +1,7 @@
 # React Blog
 
+Blogging has always been hard for me to get in to. I have never been great at expressing my thoughts through text. So I decided that I wanted to get over that feeling and just do it. I have always heard great things about writing down my thoughts. So I thought that I would finally give it a solid go. This website is my first attempt at blogging and getting into the internet world. I hope you all enjoy the site, and feel free to write your own down as well.
+
 ## Deployed Link
 
 [Heroku](https://heroku-blog-project.herokuapp.com/)
@@ -10,7 +12,7 @@
 
 ## Introduction
 
-React Blog is a blog that is meant to target those who are looking to track what kind of food they are eating and how it is effecting their bodies. Users will get to see
+React Blog is a blog that is meant to target those who are looking to track what kind of food they are eating and how it is effecting their bodies...
 
 ## Technologies
 
@@ -30,16 +32,10 @@ Extentions:
 
 ## Getting Started
 
-Login to get started! ....
-
-## Screenshots
-
-<!-- ![First](https://imgur.com/2Zqdv2e.png)
-![Second](https://imgur.com/3o4FJs3.png)
-![Third](https://imgur.com/hHmrK28.png)
-![Fourth](https://imgur.com/Mhp1ttO.png)
-![Fifth](https://imgur.com/O0gOE0d.png) -->
+Login to get started!
 
 ## Next Steps
 
--
+-   Log in to see posts
+-   Only see your own posts upon login
+-   Create a space where users can see public blog posts

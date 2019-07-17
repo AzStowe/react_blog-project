@@ -6,8 +6,8 @@ function BlogPost({ title, author, post, postId, handleDeletePost }) {
     return (
         <div className="b">
             <h3>{author}</h3>
-            <h5>{title}</h5>
-            <h6>{post}</h6>
+            <h4>{title}</h4>
+            <h5>{post}</h5>
             <Button
                 type={'Delete'}
                 handleDeletePost={handleDeletePost}
